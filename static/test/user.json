@@ -1,0 +1,10 @@
+{
+  "success": true,
+  "message": "成功状态",
+  "data": {
+    "userInfo": {
+    	"userName": "ceshi",
+    	"timer":1234531223
+    }
+  }
+}
