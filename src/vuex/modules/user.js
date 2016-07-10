@@ -11,6 +11,15 @@ const state = {
   isLogin: false
 }
 
+// 获取缓存的用户信息
+var _upDateTime = +localStore.get('upDateTime') || 0
+const _thisTime = (new Date()).getTime()
+
+if ((_thisTime - _upDateTime) < 1000 * 60 * 5) {
+  state.userInfo = localStore.get('userInfo')
+  state.isLogin = true
+}
+
 // mutations
 const mutations = {
   [IS_LOGIN] (state) {
@@ -23,6 +32,8 @@ const mutations = {
     state.userInfo = userInfo
     if (userInfo.userName) {
       state.isLogin = true
+      localStore.set('userInfo', userInfo)
+      localStore.set('upDateTime', (new Date()).getTime())
     } else {
       state.isLogin = false
       localStore.clear()

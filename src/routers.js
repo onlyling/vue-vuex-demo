@@ -2,7 +2,7 @@
 
 import store from './vuex/store'
 
-export default function (router, app) {
+export default function (router) {
   router.map({
     '/': { // 首页
       name: 'home',
@@ -45,14 +45,10 @@ export default function (router, app) {
   })
   router.beforeEach(({to, next}) => {
     if (to.auth) {
-      // setTimeout(() => {
       if (!store.state.user.isLogin) {
         to.router.go({name: 'login'})
       }
-      // }, 0)
     }
     next()
   })
-
-  router.start(app, '#app')
 }

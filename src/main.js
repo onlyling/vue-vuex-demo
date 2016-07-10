@@ -15,4 +15,6 @@ let router = new VueRouter({
 
 let app = Vue.extend(App)
 
-routerMap(router, app)
+routerMap(router)
+
+router.start(app, '#app')

@@ -3,9 +3,8 @@ import VueResource from 'vue-resource'
 
 Vue.use(VueResource)
 
-Vue.http.options.emulateJSON = false
 Vue.http.options.crossOrigin = true
-Vue.http.options.root = '/admin/'
+Vue.http.options.root = '/admin'
 
 Vue.http.interceptors.push({
   request (request) {

@@ -114,6 +114,9 @@
     created () {
       if (localStore.get('userName')) {
         this.getUserInfo()
+        setInterval(() => {
+          this.getUserInfo()
+        }, 5 * 60 * 1000)
       }
     },
     ready () {
@@ -150,7 +153,7 @@
       doLogout () {
         let self = this
         api.doLogout().then(res => {
-          let _res = res.data
+          let _res = res.json()
           if (_res.success) {
             self.setUserInfo({})
             localStore.remove('userName')

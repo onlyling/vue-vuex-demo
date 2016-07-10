@@ -1,6 +1,8 @@
-# yaochi
+# rouadmin
 
-> test
+> 学习使用 vue vuex vue-resource 做一个单页应用
+> 
+> 使用vue-cli构建
 
 ## Build Setup
 
@@ -24,4 +26,8 @@ npm run e2e
 npm test
 ```
 
-For detailed explanation on how things work, checkout the [guide](https://github.com/vuejs-templates/webpack#vue-webpack-boilerplate) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+2016-07-10
+> 更新了验证用户是否登录、vuex中用户信息的初始化方式
+
+用户信息在登录的时候缓存到浏览器中的`localStorage`里面，并且把缓存一个更新时间搓，根据更新时间戳是否超过缓存时间决定是否使用当前缓存的用户信息。
+在根组件中，每5分钟更新一次用户信息，以保证用户信息不会超时，避免刷新页面后登陆状态丢失。

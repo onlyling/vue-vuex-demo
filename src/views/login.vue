@@ -71,7 +71,7 @@
           userName: self.userName,
           passWord: self.passWord
         }).then(res => {
-          let _res = res.data
+          let _res = res.json()
 
           self.loginInfo = _res.message
 
