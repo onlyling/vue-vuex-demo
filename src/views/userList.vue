@@ -1,19 +1,31 @@
 <template>
-  <p>这里是userList.vue</p>
+
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th width="50px">id</th>
+          <th>用户名</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr v-for="item in [1,2,3]">
+          <td>{{item}}</td>
+          <td>{{item}}</td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+
 </template>
 <script>
-  // export default {
-  //   vuex: {
-  //     getters: {
-  //       isLogin: state => state.user.isLogin
-  //     }
-  //   },
-  //   route: {
-  //     data (transition) {
-  //       if (!this.isLogin) {
-  //         this.$route.router.go({name: 'login'})
-  //       }
-  //     }
-  //   }
-  // }
+  export default {
+    route: {
+      data (transition) {
+        console.log('1')
+      }
+    }
+  }
 </script>

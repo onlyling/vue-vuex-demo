@@ -53,7 +53,11 @@
       <div class="ui-main">
 
         <div class="ui-main-in">
-          <router-view></router-view>
+          
+          <div class="container">
+            <router-view></router-view>
+          </div>
+
         </div>
 
       </div>
